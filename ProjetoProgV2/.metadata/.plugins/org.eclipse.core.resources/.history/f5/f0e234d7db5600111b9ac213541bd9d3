@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Portal de Jornalismo Escolar - ESMM - Recursos</title>
+<link rel="stylesheet" href="styles/estilo.css">
+</head>
+<body style="background-image: url('img/jornmulheres.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+
+ <div class="container">
+
+        <!-- tudo do teu site aqui dentro -->
+
+<header id="topo">
+	<h1>Portal de Jornalismo da Escola Secundária de
+	     Mem Martins</h1>
+</header>
+ 
+<nav id="navegacao">
+		<ul>
+			<li><a href="index.html">Início</a></li>
+			<li><a href="quem_somos.html">Quem Somos</a></li>
+			<li><a href="projetos.html">Projetos</a></li>
+			<li><a href="recursos.html">Recursos</a></li>
+			<li><a href="contactos.html">Contactos</a></li>
+			<li><a href="contato.jsp">Formulário de Contacto</a></li>
+		</ul>
+</nav>
+<section id="conteudo">
+ 
+		<h2>Recursos úteis</h2>
+		<p>
+			<strong>Informação organizada sobre os conteúdos do portal</strong></p>
+			
+			<img alt="Fotografia do Portal de Jornalismo Escolar"
+		 		src="img/cameras.jpg">
+			
+			<p>A tabela seguinte apresenta os principais recursos e tipos de
+			conteúdos disponíveis no Portal Escolar, organizados por categoria
+			e frequência de publicação.</p>
+			
+			<table>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Tipo de Conteúdo</th>
+                    <th>Frequência</th>
+                </tr>
+                <tr>
+                    <td>Notícias</td>
+                    <td>Atualidade escolar</td>
+                    <td>Semanal</td>
+                </tr>
+ 
+                <tr>
+                    <td>Reportagens</td>
+                    <td>Eventos e projetos</td>
+                    <td>Mensal</td>
+                </tr>
+ 
+                <tr>
+                    <td>Entrevistas</td>
+                    <td>Comunidade escolar</td>
+                    <td>Mensal</td>
+                </tr>
+ 
+                <tr>
+                    <td>Cultura</td>
+                    <td>Artigos culturais</td>
+                    <td>Quinzenal</td>
+                </tr>
+ 
+                <tr>
+                    <td>Desporto</td>
+                    <td>Resultados e eventos</td>
+                    <td>Semanal</td>
+                </tr>
+            </table>
+            
+            <p>Os conteúdos apresentados são atualizados regularmente, de acordo com o
+        calendário escolar e as atividades desenvolvidas pela comunidade educativa.</p>
+ 
+        </section>
+        </div>
+		
+<footer id="rodape">
+		<p>&copy; 2026 Portal de Jornalismo Escolar ESMM | Todos os direitos
+			reservados.<p>	
+	</footer>	
+	
+	<script src="scripts/script.js"></script>
+ 
+</body>
+</html>

@@ -1,0 +1,48 @@
+function mostrarMensagem() {
+	alert("Estás no Portal de Jornalismo Escolar!");
+}
+ 
+function confirmarPortal() {
+	var resposta = confirm("Tens uma notícia ou sugestão?");
+	var paragrafo = document.getElementById("resposta");
+	
+	if (paragrafo) {
+		if(resposta) {
+			paragrafo.innerHTML = "Obrigado por contribuir para o Portal Escolar.";
+		} else {
+			paragrafo.innerHTML = "Talvez noutra altura!";
+		}
+	} else {
+		alert("Erro: element <p id= 'resposta'> não encontrado");
+	}
+}
+ 
+function validarFormulario(){
+	var nome = document.formulario.nome.value;
+ 
+	if (nome == "") {
+		alert("Por favor, preenche o campo Nome.")
+		return false;
+}
+		alert("Formulário enviado com sucesso!");
+		return true;
+}
+ 
+function pedirNome(){
+	var nome = prompt("Qual é o teu nome?");
+	
+	if (nome != nul && nome != "") {
+		documente.getElementById("boasvindas").innerHTML =
+		"Olá, " + nome + "! Bem-vindo ao Portal Escolar.";
+	}
+}
+
+documemnt.addEventListener("DOMContentLoaded", function (){
+	document.getElementById("mensagem").innerText=
+	"Site carregado com sucesso!";
+
+});
+ 
+/**`
+*
+*/

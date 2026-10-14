@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Portal de Jornalismo Escolar - ESMM - Página inicial</title>
+<link rel="stylesheet" href="../styles/estilo.css">
+</head>
+<body>
+
+<div class="container">
+<header id="topo">
+ 
+	<img alt="Fotografia do Portal de Jornalismo Escolar"
+         src="../img/logoP.jpg" style="width: 184px; height: 211px; ">
+ 
+  	<h1>Portal de Jornalismo da Escola Secundária de
+       Mem Martins</h1>
+ 	
+</header>
+ 
+<nav id="navegacao">
+ 
+    <ul>
+
+      <li><a href="index.html">Início</a></li>
+      <li><a href="quem_somos.html">Quem Somos</a></li>
+      <li><a href="projetos.html">Projetos</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="contactos.html">Contactos</a></li>
+      <li><a href="formulario.html">Formulário de Contacto</a></li>
+            <li><a href="ListarComentariosServlet">Mural de Comentários</a></li>
+            <li><a href="login.jsp">Login Admin</a></li>
+ 
+    </ul>
+ 
+</nav>
+ 
+ 
+ 
+<section id="conteudo">
+ 
+    <h2>Bem-vindo ao nosso Portal</h2>
+ 
+    <p>O Portal de Jornalismo Escolar é um espaço digital dedicado à
+ 
+     divulgação de notícias, reportagens e eventos da nossa escola.
+ 
+     Este projeto tem como objetivo informar a comunidade escolar sobre
+ 
+     as atividades, iniciativas e acontecimentos mais relevantes,
+ 
+     dando voz aos alunos e promovendo o espírito crítico
+ 
+     e participativo.
+ 
+     Aqui poderás encontrar conteúdos atualizados sobre a vida
+ 
+     escolar, cultura, desporto e projetos educativos,
+ 
+     contribuindo para uma escola mais informada e ativa.</p>
+ 
+    
+ 
+    
+ 
+  <div>
+ 
+     <img alt="Fotografia do Portal de Jornalismo Escolar"
+ 
+         src="../img/jornalismo.jpg" style="width: 255px; height: 163px; ">
+ 
+         
+ 
+     <img alt="Fotografia do Portal de Jornalismo Escolar"
+ 
+         src="../img/cameras.jpg" style="width: 255px; height: 159px; ">
+ 
+         
+ 
+     <img alt="Fotografia do Portal de Jornalismo Escolar"
+ 
+         src="../img/jorn3.jpg" style="height: 155px; width: 247px">
+ 
+  
+     <img alt="Fotografia do Portal de Jornalismo Escolar"
+         src="../img/jornalista.jpg" style="height: 155px; width: 244px">          
+ 
+  </div>  
+
+    <h2>Destaques</h2>
+ 
+    <p>
+ 
+      <strong>Semana Cultural da Escola: </strong><i>Durante a Semana
+ 
+       Cultural, a escola promoveu diversas atividades como exposições,
+ 
+       apresentações musicais e workshops educativos. A iniciativa teve
+ 
+       como objetivo incentivar a criatividade dos alunos e reforçar o
+ 
+       espírito de comunidade escolar.</i>
+ 
+    </p>
+ 
+    <p>
+ 
+      <strong>Alunos Destacam-se em Competição Desportiva: </strong><i>
+ 
+              Os alunos da escola participaram numa competição desportiva
+ 
+              inter-escolas, alcançando excelentes resultados em várias
+ 
+              modalidades. O evento promoveu o fair-play, o trabalho em
+ 
+              equipa e o orgulho na representação da escola.</i>
+ 
+    </p>
+ 
+    <p>
+ 
+      <strong>Novos Projetos Tecnológicos em Desenvolvimento: </strong><i>
+ 
+             Estão a ser desenvolvidos novos projetos tecnológicos na escola,
+ 
+             envolvendo alunos de vários cursos profissionais. Estas iniciativas
+ 
+             permitem aplicar conhecimentos práticos e preparar os alunos para o
+ 
+             mercado de trabalho.</i>
+ 
+    </p>
+    <p>
+      <strong>Sessão de Orientação Vocacional: </strong><i>A escola realizou uma
+      sessão de orientação vocacional destinada aos alunos do ensino secundário.
+      A atividade teve como objetivo apoiar os estudantes na escolha do seu percurso
+      académico e profissional.</i>
+ 
+  </p>
+ 
+  </section>
+ 
+  </div>
+
+  <footer id="rodape">
+    <p>&copy; 2026 Portal de Jornalismo Escolar ESMM | Todos os direito
+      reservados.<p>
+  </footer>  
+
+    <script src="../scripts/script.js"></script>
+  <script>
+    alert("Bem-vindo ao Portal de Jornalismo da Escola Secundária de Mem Martins!");
+  </script>
+ 
+  <p id="boasvindas"></p>
+ 
+</body>
+</html>

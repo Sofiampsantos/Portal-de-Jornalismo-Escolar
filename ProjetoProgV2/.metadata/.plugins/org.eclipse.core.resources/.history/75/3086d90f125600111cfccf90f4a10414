@@ -1,0 +1,51 @@
+package br.com.formulario;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/ContatoServlet")
+public class ContatoServlet extends HttpServlet {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String nome = request.getParameter("nome");
+		String email = request.getParameter("email");
+		String assunto = request.getParameter("assunto");
+		String mensagem = request.getParameter("mensagem");
+
+		try {
+
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/clube_db", "root", ""
+			// password padrão do xampp é vazia
+			);
+
+			String sql = "INSERT INTO contatos (nome, email, assunto, mensagem) VALUES (?, ?, ?, ?)";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+
+			stmt.setString(1, nome);
+			stmt.setString(2, email);
+			stmt.setString(3, assunto);
+			stmt.setString(4, mensagem);
+			stmt.executeUpdate();
+
+			stmt.close();
+			conn.close();
+			response.sendRedirect("sucesso.jsp");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+	}
+}

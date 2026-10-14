@@ -1,0 +1,73 @@
+package br.com.formulario;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/ProcurarContatoServlet")
+public class ProcurarContatoServlet extends HttpServlet {
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String busca = request.getParameter("busca"); // texto para procurar
+        List<String[]> resultados = new ArrayList<>();
+
+        try {
+            Class.forName("org.mariadb.jdbc.Driver");
+
+            Connection conn = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/clube_db",
+                    "root",
+                    ""
+            );
+
+            String sql = "SELECT * FROM contatos WHERE nome LIKE ? OR email LIKE ? OR assunto LIKE ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+
+            String termo = "%" + busca + "%";
+
+            stmt.setString(1, termo);
+            stmt.setString(2, termo);
+            stmt.setString(3, termo);
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                resultados.add(new String[]{
+                        rs.getString("id"),
+                        rs.getString("nome"),
+                        rs.getString("email"),
+                        rs.getString("assunto"),
+                        rs.getString("mensagem")
+                });
+            }
+
+            rs.close();
+            stmt.close();
+            conn.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Passa resultados para JSP
+        request.setAttribute("contatos", resultados);
+        request.getRequestDispatcher("listar.jsp").forward(request, response);
+    }
+}

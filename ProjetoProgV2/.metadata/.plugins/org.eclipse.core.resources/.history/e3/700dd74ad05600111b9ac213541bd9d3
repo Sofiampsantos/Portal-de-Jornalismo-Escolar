@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.List"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lista de Contatos</title>
+</head>
+<body>
+
+<h2>Contatos Recebidos</h2>
+
+<table border="1">
+
+<tr>
+    <th><a href="ListarContatosServlet?ordem=nome">Nome</a></th>
+    <th><a href="ListarContatosServlet?ordem=email">Email</a></th>
+    <th><a href="ListarContatosServlet?ordem=assunto">Assunto</a></th>
+    <th>Mensagem</th> <th>Ações</th>
+</tr>
+
+<%
+List<String[]> contatos = (List<String[]>) request.getAttribute("contatos");
+
+if (contatos != null && !contatos.isEmpty()) {
+
+    for (String[] c : contatos) {
+%>
+
+<tr>
+    <td><%= c[1] %></td>
+    <td><%= c[2] %></td>
+    <td><%= c[3] %></td>
+    <td>
+        <a href="EditarContatoServlet?id=<%= c[0] %>">Editar</a>
+
+        <a href="ApagarContatoServlet?id=<%= c[0] %>">Apagar</a>
+    </td>
+</tr>
+
+<%
+    }
+
+} else {
+%>
+
+<tr>
+    <td colspan="4">Nenhum contacto encontrado</td>
+</tr>
+
+<%
+}
+%>
+
+</table>
+
+<br>
+
+<form action="ProcurarContatoServlet" method="get">
+    <input type="text" name="busca" placeholder="Procurar...">
+    <button type="submit">Pesquisar</button>
+</form>
+
+<br>
+
+<a href="contato.jsp">Voltar</a>
+<a href="ListarContatosServlet">Listar</a>
+
+</body>
+</html>

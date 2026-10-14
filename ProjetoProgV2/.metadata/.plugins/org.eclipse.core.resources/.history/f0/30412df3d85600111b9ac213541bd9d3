@@ -1,0 +1,16 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Sucesso</title> 
+</head> 
+<body style="background-image: url('${pageContext.request.contextPath}/img/jornmulheres.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+ 
+    <h2>Mensagem enviada com sucesso!</h2> 
+    
+    <a href="contato.jsp">Voltar ao Formulário</a> 
+
+    <a href="ListarContatosServlet">Listar Contatos</a> 
+ 
+</body> 
+</html>

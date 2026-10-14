@@ -1,0 +1,57 @@
+<%@ page import="java.util.List"%> 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="UTF-8"> 
+<title>Lista de Contatos</title> 
+</head> 
+<body> 
+
+<h2>Contatos Recebidos</h2> 
+
+<table border="1"> 
+<tr> 
+
+	<th>Nome</th> 
+	<th>Email</th> 
+	<th>Assunto</th> 
+	<th>Ações</th> 
+
+</tr> 
+
+<%  
+List<String[]> contatos = (List<String[]>) request.getAttribute("contatos"); 
+
+if(contatos !=null && !contatos.isEmpty()) { 
+	for (String[] c: contatos) { 
+
+%> 
+<tr> 
+
+	<td><%=c[1] %></td> 
+	<td><%=c[2] %></td> 
+	<td><%=c[3] %></td> 
+	<td> 
+
+		<a href="EditarContatoServlet?id=<%= c[0] %>">Editar</a> 
+		<a href="EditarContatoServlet?id=<%= c[0] %>">Apagar</a> 
+ 	</td>
+</tr>
+
+<% 
+	} 
+
+} else { 
+%> 
+<tr> 
+	<td colspan="4">Nenhum contato encontrado</td> 
+</tr> 
+<% 
+} 
+%> 
+
+</table> 
+
+<a href="contato.jsp">Voltar</a> 
+</body> 
+</html> 

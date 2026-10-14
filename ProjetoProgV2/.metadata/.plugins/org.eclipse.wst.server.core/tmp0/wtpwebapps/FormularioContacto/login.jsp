@@ -1,0 +1,146 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Portal de Jornalismo Escolar - ESMM - Login</title>
+<link rel="stylesheet" type="text/css" href="styles/estilo.css">
+<style>
+    /* Estilos adicionais para garantir que o "card" fica lindo e centralizado */
+    .login-box {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 40px;
+        background-color: rgba(255, 255, 255, 0.96); /* Fundo branco com ligeira opacidade */
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        border-top: 5px solid #b30000; /* Linha de destaque vermelha */
+        text-align: left;
+    }
+
+    .login-box h2 {
+        text-align: center;
+        color: #0f172a;
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-family: 'League Spartan', Arial, sans-serif;
+        font-size: 26px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #334155;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-size: 15px;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+    }
+
+    .form-group input:focus {
+        border-color: #b30000;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(179, 0, 0, 0.15);
+    }
+
+    .btn-login {
+        width: 100%;
+        background-color: #b30000;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.1s ease;
+        margin-top: 10px;
+    }
+
+    .btn-login:hover {
+        background-color: #8b0000;
+    }
+
+    .btn-login:active {
+        transform: scale(0.98);
+    }
+
+    .error-msg {
+        color: #d32f2f;
+        background-color: #ffebee;
+        padding: 10px;
+        border-radius: 4px;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 20px;
+        border: 1px solid #ffcdd2;
+        font-size: 13px;
+    }
+</style>
+</head>
+
+<body style="background-image: url('img/jornmulheres.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+ 
+  <div class="container">
+		 		
+    <header id="topo">
+        <img alt="Fotografia do Portal de Jornalismo Escolar"
+             src="img/logoP.jpg" style="width: 184px; height: 211px;">
+        <h1>Portal de Jornalismo da Escola Secundária de Mem Martins</h1>
+    </header>
+     
+<nav id="navegacao">
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="quem_somos.html">Quem Somos</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="recursos.html">Recursos</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+        <li><a href="contato.jsp">Formulário de Contacto</a></li>
+    </ul>
+</nav>
+ 
+    <div class="login-box">
+        <h2>Iniciar Sessão</h2>
+ 
+        <form action="LoginServlet" method="post">
+            <div class="form-group">
+                <label>Utilizador:</label>
+                <input type="text" name="utilizador" placeholder="Insere o teu utilizador" required>
+            </div>
+ 
+            <div class="form-group">
+                <label>Palavra-passe:</label>
+                <input type="password" name="password" placeholder="Insere a tua palavra-passe" required>
+            </div>
+ 
+            <button type="submit" class="btn-login">Entrar no Portal</button>
+        </form>
+ 
+        <% if(request.getAttribute("erro") != null) { %>
+            <div class="error-msg">
+                <%= request.getAttribute("erro") %>
+            </div>
+        <% } %>
+    </div>
+    
+  </div>
+		
+  <footer id="rodape">
+      <p>&copy; 2026 Portal de Jornalismo Escolar ESMM | Todos os direitos reservados.</p>	
+  </footer>	
+ 
+</body>
+</html>

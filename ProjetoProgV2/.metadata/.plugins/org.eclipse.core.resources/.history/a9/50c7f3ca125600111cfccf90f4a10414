@@ -1,0 +1,93 @@
+package br.com.formulario;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+/**
+ *
+ * 
+ * 
+ * Servlet implementation class EditarContatoServlet
+ *
+ * 
+ * 
+ */
+
+@WebServlet("/EditarContatoServlet")
+
+public class EditarContatoServlet extends HttpServlet {
+
+protected void doGet(HttpServletRequest request, HttpServletResponse response)
+
+throws ServletException, IOException {
+
+
+String id = request.getParameter("id");
+
+
+try {
+
+
+Connection conn = DriverManager.getConnection(
+
+"jdbc:mysql://localhost:3306/clube_db",
+
+"root",
+
+""
+
+);
+
+
+
+PreparedStatement stmt =
+
+conn.prepareStatement("SELECT * FROM contatos WHERE id=?");
+
+stmt.setInt(1, Integer.parseInt(id));
+
+ResultSet rs = stmt.executeQuery();
+
+
+if (rs.next()) {
+
+
+request.setAttribute("id", rs.getInt("id"));
+
+request.setAttribute("nome", rs.getString("nome"));
+
+request.setAttribute("email", rs.getString("email"));
+
+request.setAttribute("assunto", rs.getString("assunto"));
+
+request.setAttribute("mensagem", rs.getString("mensagem"));
+
+
+}
+
+
+conn.close();
+
+
+} catch (Exception e) {
+
+
+e.printStackTrace();
+
+
+}
+
+request.getRequestDispatcher("editar.jsp").forward(request, response);
+
+
+}
+}

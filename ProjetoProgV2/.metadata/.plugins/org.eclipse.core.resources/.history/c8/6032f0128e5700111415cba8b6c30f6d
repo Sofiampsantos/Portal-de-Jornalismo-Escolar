@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formulário - validação do campo nome</title><title>Formulário de Contacto</title>
+<link rel="stylesheet" type="text/css" href="../styles/estilo.css">
+</head>
+<body style="background-image: url('img/jornmulheres.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+ 
+	<form name="formulario" onsubmit="return validarFormulario()">
+ 
+    <h2>Contacto com o Portal Escolar</h2>
+    <p>Utiliza este formulário para enviar sugestões, notícias ou dúvidas.</p>
+ 
+    <label>Nome:</label><br>
+    <input type="text" name="nome" placeholder="Digite o seu nome"><br><br>
+ 
+    <label>Email:</label><br>
+    <input type="email" name="email" placeholder="exemplo@email.com"><br><br>
+ 
+    <label>Assunto:</label><br>
+    <select name="assunto">
+        <option value="">-- Selecione um assunto --</option>
+        <option value="noticia">Sugestão de notícia</option>
+        <option value="evento">Divulgação de evento</option>
+        <option value="erro">Correção de informação</option>
+        <option value="outro">Outro</option>
+    </select><br><br>
+ 
+    <label>Mensagem:</label><br>
+    <textarea name="mensagem" rows="5" placeholder="Escreva a sua mensagem"></textarea><br><br>
+ 
+    <input type="checkbox" name="aceitar">
+    <label>Confirmo que a informação enviada é verdadeira</label><br><br>
+ 
+    <input type="submit" value="Enviar mensagem">
+ 
+</form>
+	
+	<script src="../scripts/script.js"></script>
+ 
+</body>
+</html>

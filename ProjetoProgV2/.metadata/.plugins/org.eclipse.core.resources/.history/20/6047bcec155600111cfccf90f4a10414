@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Portal de Jornalismo Escolar - ESMM - Contactos</title>
+<link rel="stylesheet" href="../styles/estilo.css">
+</head>
+<body>
+
+ <div class="container">
+
+        <!-- tudo do teu site aqui dentro -->
+        <header>...</header>
+        <nav>...</nav>
+        <main>...</main>
+        <footer>...</footer>
+
+<body class="fundo-projetos">
+ 
+<header id="topo">
+
+<img alt="Fotografia do Portal de Jornalismo Escolar"
+		 		src="img/logoP.jpg" style="width: 184px; height: 211px; ">
+
+	<h1>Portal de Jornalismo da Escola Secundária de
+	     Mem Martins</h1>
+</header>
+ 
+<nav id="navegacao">
+		<ul>
+			<li><a href="index.html">Início</a></li>
+			<li><a href="quem_somos.html">Quem Somos</a></li>
+			<li><a href="projetos.html">Projetos</a></li>
+			<li><a href="recursos.html">Recursos</a></li>
+			<li><a href="contactos.html">Contactos</a></li>
+			<li><a href="formulario.html">Formulário de Contacto</a></li>
+		</ul>
+</nav>
+ 
+<section id="conteudo">
+ 
+			<h2>Recursos úteis</h2>
+			<p>Nesta página podes encontrar os contactos do Portal Escolar.
+			Caso tenhas alguma dúvida, sugestão ou pretendas enviar informações
+			relevantes para divulgação, utiliza os contactos apresentados abaixo.</p>
+			
+			<p>
+				<strong>Email: </strong></p>
+				<p><i>Portal.escolar@escola.pt (Telefone da escola: +351 000 000 000)</i></p>
+				<p><strong>Localização: </strong></p>
+				<p><i>Escola Secundária de Mem Martins Rua S.Francisco Xavier,
+				Alto do Forte, 2635-195 Rio de Mouro</i></p>
+				<p><strong>Horário de contacto: </strong></p>
+				<p><i>Dias úteis, das 9h00 às 17h15</i></p>
+				<p><strong>Redes sociais: </strong></p>
+				<p><i>Instagram – @portalescolar.esmm</i></p>
+				<p><i>Facebook – Portal Escolar</i></p>
+				
+			<p>Para contactos mais detalhados ou envio de mensagens, utiliza o formulário
+			disponível na página de formulário de contacto.</p>	
+				
+			
+		</section>
+        </div>
+		
+<footer id="rodape">
+		<p>&copy; 2026 Portal de Jornalismo Escolar ESMM | Todos os direitos
+			reservados.<p>	
+	</footer>		
+			
+	<script src="../scripts/script.js"></script>			
+ 
+</body>
+</html>

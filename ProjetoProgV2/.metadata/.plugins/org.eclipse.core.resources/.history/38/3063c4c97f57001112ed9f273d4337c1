@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portal de Jornalismo Escolar - ESMM - Login</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/estilo.css">
+</head>
+<body style="background-image: url('${pageContext.request.contextPath}/img/jornmulheres.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+ 
+<div class="container">
+ 
+    <h2 style="text-align: center; color: #b30000; font-family: 'League Spartan', Arial, sans-serif;">Iniciar Sessão</h2>
+ 
+    <form action="LoginServlet" method="post">
+        <label>Utilizador:</label>
+        <input type="text" name="utilizador" required>
+ 
+        <label>Palavra-passe:</label>
+        <input type="password" name="password" required>
+ 
+        <br><br>
+        <button type="submit" style="background-color: #b30000; color: white; padding: 10px 20px; border: none; cursor: pointer; font-weight: bold; width: 100%;">Entrar</button>
+    </form>
+ 
+    <% if(request.getAttribute("erro") != null) { %>
+        <p style="color:red; font-weight:bold; text-align:center; margin-top: 15px;"><%= request.getAttribute("erro") %></p>
+    <% } %>
+ 
+</div>
+ 
+</body>
+</html>

@@ -1,0 +1,19 @@
+package br.com.formulario;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Conexaobd {
+
+    public Connection getConnection() {
+        try {
+            return DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/clube_bd",
+                "root",
+                ""
+            );
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+}

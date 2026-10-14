@@ -1,0 +1,58 @@
+package br.com.formulario; 
+
+import java.io.IOException; 
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List; 
+
+import jakarta.servlet.ServletException; 
+import jakarta.servlet.annotation.WebServlet; 
+import jakarta.servlet.http.*; 
+
+@WebServlet("/ListaContatosServlet") 
+public class ListarContatosServlet2 extends HttpServlet { 
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException { 
+
+		List<String[]> contatos = new ArrayList<>(); 
+
+		try { 
+			Class.forName("com.mysql.cj.jdbc.Driver"); 
+
+ 
+
+			Connection conn = DriverManager.getConnection( 
+					"jdbc:mysql://localhost:3306/clube_db", 
+					"root", 
+					"" 
+					); 
+
+ 
+
+			Statement stmt = conn.createStatement(); 
+			ResultSet rs = stmt.executeQuery("SELECT * FROM contatos"); 
+
+			while (rs.next()) { 
+				contatos.add(new String[]{
+					rs.getString("id"),
+					rs.getString("nome"),
+					rs.getString("email"),
+					rs.getString("assunto"),
+					rs.getString("mensagem"),
+				});
+				
+			}
+			
+			conn.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	
+		request.setAttribute("contatos", contatos);
+		request.getRequestDispatcher("listar.jsp").forward (request, response);
+
+} 
+
+} 

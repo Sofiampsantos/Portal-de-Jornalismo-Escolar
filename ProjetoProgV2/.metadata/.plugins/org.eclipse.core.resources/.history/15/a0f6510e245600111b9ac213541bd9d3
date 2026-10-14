@@ -1,0 +1,45 @@
+package br.com.formulario;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+/**
+ * Servlet implementation class ApagarContatoServlet
+ */
+@WebServlet("/ApagarContatoServlet")
+public class ApagarContatoServlet extends HttpServlet {
+    
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+            throws IOException {
+        
+        String id = request.getParameter("id");
+        
+        try {
+            Connection conn = DriverManager.getConnection(
+                "jdbc:mariadb://localhost:3306/Clube_db",
+                "root",
+                ""
+            );
+            
+            PreparedStatement stmt = conn.prepareStatement("DELETE FROM contatos WHERE id=?");
+            
+            stmt.setInt(1, Integer.parseInt(id));
+            
+            stmt.executeUpdate();
+            
+            conn.close();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        response.sendRedirect("ListarContatosServlet");
+    }
+}

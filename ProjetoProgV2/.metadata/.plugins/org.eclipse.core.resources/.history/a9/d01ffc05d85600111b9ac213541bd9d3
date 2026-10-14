@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Editar Contacto</title>
+
+</head>
+
+<body>
+
+
+	<h2>Editar Contacto</h2>
+
+	<form action="SalvarEdicao" method="post">
+
+		<input type="hidden" name="id" value="${id}"> Nome:<br> <input
+			type="text" name="nome" value="${nome}"><br> Email:<br>
+
+		<input type="email" name="email" value="${email}"><br>
+
+
+		Assunto:<br> <input type="text" name="assunto" value="${assunto}"><br>
+
+
+		Mensagem:<br>
+
+		<textarea name="mensagem">${mensagem}</textarea>
+		<br>
+
+
+		<button type="submit">Salvar</button>
+
+	</form>
+
+
+
+</body>
+
+</html>

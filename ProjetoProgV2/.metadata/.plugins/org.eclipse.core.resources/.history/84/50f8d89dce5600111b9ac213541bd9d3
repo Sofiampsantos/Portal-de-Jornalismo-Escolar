@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Contato</title>
+
+<style>
+label {
+	font-weight: bold;
+	color: blue;
+}
+
+input, textarea {
+	width: 300px;
+	margin-bottom: 10px;
+}
+
+button {
+	background: orange;
+	color: white;
+	padding: 8px;
+}
+</style>
+
+</head>
+<body>
+
+	<h2>Contato</h2>
+	<p>Utilize o formulário abaixo para enviar uma mensagem.</p>
+
+	<form action="ContatoServlet" method="post">
+
+		<label>Nome completo:</label><br> 
+		<input type="text" name="nome"required><br>
+		 
+		<label>Email:</label><br> 
+		<input type="email" name="email" required><br>
+		 
+		<label>Assunto:</label><br>
+		<input type="text" name="assunto"><br> 
+		
+		<label>Mensagem:</label><br>
+		<textarea name="mensagem" required></textarea>
+		<br>
+
+		<button type="submit">Enviar Mensagem</button>
+
+	</form>
+
+	<a href="ListarContatosServlet">Listar</a>
+
+</body>
+</html>

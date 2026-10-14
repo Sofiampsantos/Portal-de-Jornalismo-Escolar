@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portal de Jornalismo Escolar - ESMM - login</title>
+    <link rel="stylesheet" type="text/css" href="../styles/estilo.css">
+    <script src="../scripts/script.js"></script>
+</head>
+ 
+<body>
+ 
+<div class="container">
+ 
+    <h2>Iniciar Sessão</h2>
+ 
+    <form onsubmit="return validarLogin()">
+        <label>Utilizador:</label>
+        <input type="text" id="utilizador">
+ 
+        <label>Palavra-passe:</label>
+        <input type="password" id="password">
+ 
+        <br><br>
+        <input type="submit" value="Entrar">
+    </form>
+ 
+    <p id="erro" style="color:red;"></p>
+ 
+</div>
+ 
+</body>
+</html>
+ 

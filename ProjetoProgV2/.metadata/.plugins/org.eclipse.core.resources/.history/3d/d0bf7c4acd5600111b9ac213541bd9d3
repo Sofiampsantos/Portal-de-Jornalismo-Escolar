@@ -1,0 +1,77 @@
+package br.com.formulario; 
+
+import java.io.IOException; 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List; 
+
+import jakarta.servlet.ServletException; 
+import jakarta.servlet.annotation.WebServlet; 
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest; 
+import jakarta.servlet.http.HttpServletResponse; 
+
+@WebServlet("/ListarContatosServlet") 
+public class ListarContatosServlet extends HttpServlet { 
+
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException { 
+
+		List<String[]> contatos = new ArrayList<>(); 
+		String ordenarPor = request.getParameter("ordem");
+		
+		// Validação segura para evitar SQL Injection na ordenação
+		if (ordenarPor == null || 
+				(!ordenarPor.equals("nome") && 
+				 !ordenarPor.equals("email") && 
+				 !ordenarPor.equals("assunto"))) {
+			ordenarPor = "nome"; 
+		}
+					
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+
+		try { 
+			// 1. Alterado para o driver oficial do MySQL
+			Class.forName("com.mysql.cj.jdbc.Driver"); 
+
+			// 2. URL corrigida para o MySQL do XAMPP (Sem parâmetros de credenciais inválidos)
+			String url = "jdbc:mysql://localhost:3306/Clube_db";
+			conn = DriverManager.getConnection(url, "root", "");
+
+			stmt = conn.createStatement(); 
+			
+			// 3. Executa a busca ordenada
+			String sql = "SELECT id, nome, email, assunto, mensagem FROM contatos ORDER BY " + ordenarPor + " ASC";
+			rs = stmt.executeQuery(sql);
+
+			while (rs.next()) { 
+				contatos.add(new String[]{
+					rs.getString("id"),
+					rs.getString("nome"),
+					rs.getString("email"),
+					rs.getString("assunto"),
+					rs.getString("mensagem")
+				});
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// 4. Bloco finally para fechar todas as conexões de forma segura na ordem correta
+			try { if (rs != null) rs.close(); } catch (Exception e) {}
+			try { if (stmt != null) stmt.close(); } catch (Exception e) {}
+			try { if (conn != null) conn.close(); } catch (Exception e) {}
+		}
+	
+		// 5. Envia a lista para a página JSP renderizar na tela
+		request.setAttribute("contatos", contatos);
+		request.getRequestDispatcher("listar.jsp").forward(request, response);
+	} 
+}

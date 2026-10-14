@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Portal de Jornalismo Escolar - ESMM - Quem Somos</title>
+<link rel="stylesheet" href="styles/estilo.css">
+</head>
+<body>
+
+ <div class="container">
+
+        <!-- tudo do teu site aqui dentro -->
+        <header>...</header>
+        <nav>...</nav>
+        <main>...</main>
+        <footer>...</footer>
+	
+<header id="topo">
+
+<img alt="Fotografia do Portal de Jornalismo Escolar"
+		 		src="img/logoP.jpg" style="width: 184px; height: 211px; ">
+
+	<h1>Portal de Jornalismo da Escola Secundária de
+	     Mem Martins</h1>
+</header>
+ 
+<nav id="navegacao">
+		<ul>
+			<li><a href="index.html">Início</a></li>
+			<li><a href="quem_somos.html">Quem Somos</a></li>
+			<li><a href="projetos.html">Projetos</a></li>
+			<li><a href="recursos.html">Recursos</a></li>
+			<li><a href="contactos.html">Contactos</a></li>
+			<li><a href="contato.jsp">Formulário de Contacto</a></li>
+		</ul>
+</nav>
+<section id="conteudo">
+	<p>
+		<strong>História</strong><br> O Portal Escolar surgiu da necessidade
+		de criar um espaço digital onde fosse possível divulgar, de forma
+		organizada e acessível, as atividades e acontecimentos mais importantes
+		da escola. O projeto foi desenvolvido com o envolvimento de alunos, com
+		o apoio de professores, promovendo o uso responsável das tecnologias de informação.
+    	Desde a sua criação, o Portal Escolar tem como objetivo dar voz à comunidade educativa,
+    	permitindo que alunos e professores partilhem notícias, projetos e eventos que contribuem
+    	para a vida escolar. Este portal representa um passo importante na modernização da comunicação
+    	da escola, acompanhando a evolução do mundo digital.
+    
+    <p>
+    	<strong>Função</strong><br>A função do Portal Escolar é informar a comunidade educativa
+    	de forma clara, responsável e atualizada, promovendo a participação dos alunos e o acesso
+    	à informação relevante. O portal pretende incentivar o espírito crítico, a cidadania ativa
+    	e o interesse pelo jornalismo escolar, respeitando sempre os valores da ética, da verdade e
+    	do respeito. Através deste projeto, procura-se fortalecer a ligação entre alunos, professores
+    	e encarregados de educação, utilizando a tecnologia como ferramenta de comunicação e aprendizagem.
+    </p>
+    <p>
+    	<strong>Os Nossos Valores</strong><br>O Portal Escolar baseia-se em princípios fundamentais que
+    	orientam todo o trabalho desenvolvido pela equipa. Estes valores garantem a qualidade da informação
+    	e o respeito pela comunidade educativa.
+    	Responsabilidade – Compromisso com a veracidade da informação divulgada.
+		Ética – Respeito pelas normas do jornalismo e pelos valores da escola.
+		Transparência – Clareza na comunicação e no tratamento da informação.
+		Espírito Crítico – Análise cuidada dos factos antes da publicação.
+		Participação – Envolvimento ativo dos alunos na vida escolar.
+	</p>
+    <p>
+    	<strong>A Nossa Equipa</strong><br>A equipa do Portal Escolar é constituída por alunos interessados
+    	em jornalismo e comunicação digital, com o apoio de professores da escola. Cada elemento da equipa
+    	desempenha funções específicas, contribuindo para o bom funcionamento do portal.
+    </p>
+    <p>
+    	<strong>Funções da equipa: </strong><br>
+    	
+    	<p><strong>Coordenação Editorial – </strong><i>Organização e planeamento dos conteúdos.</i></p>
+		<p><strong>Redação – </strong><i> Escrita de notícias, entrevistas e reportagens.</i></p>
+		<p><strong>Multimédia –  </strong><i>Captação e edição de imagens e vídeos.</i></p>
+		<p><strong>Tecnologia –  </strong><i>Gestão do website e atualização dos conteúdos.</i></p>
+		<p><strong>Revisão – </strong><i>Verificação da qualidade e correção dos textos.</i></p>
+		<p>Este trabalho em equipa promove a colaboração, a responsabilidade e o desenvolvimento de competências
+		técnicas e sociais.</p>
+    	
+	</section>
+	
+	</div>
+	
+	<footer id="rodape">
+		<p>&copy; 2026 Portal de Jornalismo Escolar ESMM | Todos os direitos
+			reservados.<p>	
+	</footer>
+	
+	<script src="../scripts/script.js"></script>
+	
+	<button onclick="confirmarPortal()">Queres aceder ao Portal?
+		</button>
+		
+		<p id="resposta"></p>
+	
+</body>
+</html>

@@ -1,0 +1,99 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Portal de Jornalismo Escolar - ESMM - Formulário de Contacto</title>
+<link rel="stylesheet" type="text/css" href="styles/estilo.css">
+</head>
+<body style="background-image: url('img/jornmulheres.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+ 
+<div class="container">
+
+    <header id="topo">
+        <img alt="Fotografia do Portal de Jornalismo Escolar"
+             src="img/logoP.jpg" style="width: 184px; height: 211px;">
+        <h1>Portal de Jornalismo da Escola Secundária de Mem Martins</h1>
+    </header>
+     
+    <nav id="navegacao">
+        <ul>
+            <li><a href="index.jsp">Início</a></li>
+            <li><a href="quem_somos.html">Quem Somos</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+            <li><a href="contato.jsp">Formulário de Contacto</a></li>
+            
+            <% 
+            if (session != null && session.getAttribute("utilizadorLogado") != null) { 
+            %>
+                <li><a href="ListarContatosServlet" style="color: #ffcccc;">📁 Ver Contactos</a></li>
+                <li><a href="ListarComentariosServlet" style="color: #ffcccc;">💬 Mural de Comentários</a></li>
+                <li><a href="LogoutServlet" style="color: #ff9999;">✕ Sair</a></li>
+            <% 
+            } else { 
+            %>
+                <li><a href="login.jsp">🔑 Login</a></li>
+            <% 
+            } 
+            %>
+        </ul>
+    </nav>
+
+    <section id="conteudo">
+
+        <form name="formulario" action="InserirContactoServlet" method="POST" onsubmit="return validarFormulario()">
+         
+            <h2>Contacto com o Portal Escolar</h2>
+            <p>Utiliza este formulário para enviar sugestões, notícias ou dúvidas.</p>
+         
+            <label>Nome:</label><br>
+            <input type="text" name="nome" placeholder="Digite o seu nome"><br><br>
+         
+            <label>Email:</label><br>
+            <input type="email" name="email" placeholder="exemplo@email.com"><br><br>
+         
+            <label>Assunto:</label><br>
+            <select name="assunto">
+                <option value="">-- Selecione um assunto --</option>
+                <option value="noticia">Sugestão de notícia</option>
+                <option value="evento">Divulgação de evento</option>
+                <option value="erro">Correção de informação</option>
+                <option value="outro">Outro</option>
+            </select><br><br>
+         
+            <label>Mensagem:</label><br>
+            <textarea name="mensagem" rows="5" placeholder="Escreva a sua mensagem"></textarea><br><br>
+         
+            <input type="checkbox" name="aceitar">
+            <label>Confirmo que a informação enviada é verdadeira</label><br><br>
+         
+            <input type="submit" value="Enviar mensagem" class="botao">
+         
+        </form>
+
+
+        <% 
+        if (session != null && session.getAttribute("utilizadorLogado") != null) { 
+        %>
+            <div style="margin-top: 25px; padding: 15px; background: rgba(255,255,255,0.1); border-left: 4px solid #ffcccc;">
+                <p style="margin: 0 0 10px 0; font-weight: bold;">Painel de Administração:</p>
+                <a href="ListarContatosServlet" class="botao" style="background-color: #4A90E2; text-decoration: none; display: inline-block; padding: 8px 15px; color: white; border-radius: 4px;">📁 Ver Lista de Mensagens Recebidas</a>
+            </div>
+        <% 
+        } 
+        %>
+
+    </section>
+
+</div>
+	
+<footer id="rodape">
+    <p>&copy; 2026 Portal de Jornalismo Escolar ESMM | Todos os direitos reservados.</p>	
+</footer>
+
+<script src="scripts/script.js"></script>
+ 
+</body>
+</html>
